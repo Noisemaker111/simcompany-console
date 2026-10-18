@@ -1,0 +1,25 @@
+stile-0000.png 27363
+stile-1000.png 33554
+stile-0100.png 33224
+stile-1100.png 35690
+stile-0010.png 32121
+stile-1010.png NOT IN MANIFEST
+stile-0110.png 35583
+stile-1110.png NOT IN MANIFEST
+stile-0001.png 34007
+stile-1001.png 37364
+stile-0101.png NOT IN MANIFEST
+stile-1101.png NOT IN MANIFEST
+stile-0011.png 37182
+stile-1011.png NOT IN MANIFEST
+stile-0111.png NOT IN MANIFEST
+stile-1111.png 43182
+sroad-00.png 17707
+sroad-left-00.png 14962
+sroad-01.png 17537
+sroad-left-01.png 16019
+sroad-10.png 17904
+sroad-left-10.png 15980
+sroad-intersection.png 6110
+building-hqspring.png 52897
+building-springmarket.png 48153

@@ -1,0 +1,282 @@
+[
+ {
+  "out": "tile-0000.png",
+  "bytes": 34786,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1000.png",
+  "bytes": 51580,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-0100.png",
+  "bytes": 47908,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1100.png",
+  "bytes": 51459,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-0010.png",
+  "bytes": 47935,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1010.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-0110.png",
+  "bytes": 47119,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1110.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-0001.png",
+  "bytes": 52129,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1001.png",
+  "bytes": 56230,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-0101.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-1101.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-0011.png",
+  "bytes": 50973,
+  "dims": "512x512"
+ },
+ {
+  "out": "tile-1011.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-0111.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "tile-1111.png",
+  "bytes": 51803,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-00.png",
+  "bytes": 13621,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-00.png",
+  "bytes": 13621,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-00.png",
+  "bytes": 13621,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-00.png",
+  "bytes": 13621,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-10.png",
+  "bytes": 14511,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-10.png",
+  "bytes": 14511,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-10.png",
+  "bytes": 14511,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-10.png",
+  "bytes": 14511,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-01.png",
+  "bytes": 14412,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-01.png",
+  "bytes": 14412,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-01.png",
+  "bytes": 14412,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-01.png",
+  "bytes": 14412,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-11.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "road-11.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "road-11.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "road-11.png",
+  "error": "not in manifest"
+ },
+ {
+  "out": "road-left-00.png",
+  "bytes": 12203,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-left-01.png",
+  "bytes": 12116,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-left-10.png",
+  "bytes": 12426,
+  "dims": "512x512"
+ },
+ {
+  "out": "road-intersection.png",
+  "bytes": 3775,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-trees.png",
+  "bytes": 6790,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-residential4.png",
+  "bytes": 9076,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-residential11.png",
+  "bytes": 9227,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-residential21.png",
+  "bytes": 17475,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-residential31.png",
+  "bytes": 10614,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-park.png",
+  "bytes": 19229,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-plaza.png",
+  "bytes": 29247,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-intersection.png",
+  "bytes": 2256,
+  "dims": "140x125"
+ },
+ {
+  "out": "decor-truck.png",
+  "bytes": 2655,
+  "dims": "130x114"
+ },
+ {
+  "out": "decor-truck2.png",
+  "bytes": 8760,
+  "dims": "130x114"
+ },
+ {
+  "out": "decor-semi-truck.png",
+  "bytes": 5476,
+  "dims": "180x180"
+ },
+ {
+  "out": "decor-empty.png",
+  "bytes": 11043,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-empty2.png",
+  "bytes": 11772,
+  "dims": "512x512"
+ },
+ {
+  "out": "decor-concrete.png",
+  "bytes": 13082,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-farm-lvl1.png",
+  "bytes": 11552,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-grocery2-lvl1.png",
+  "bytes": 11801,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-construction-factory-lvl1.png",
+  "bytes": 12365,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-construction_slot_01.png",
+  "bytes": 33458,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-construction_slot_02.png",
+  "bytes": 33374,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-hq_tier01.png",
+  "bytes": 18622,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-hq_tier02.png",
+  "bytes": 19361,
+  "dims": "512x512"
+ },
+ {
+  "out": "building-exchange_tier02.png",
+  "bytes": 41037,
+  "dims": "webp?"
+ }
+]

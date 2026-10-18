@@ -1,0 +1,12 @@
+{
+  "name": "simcompany-console",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-18",
+  "kv_namespaces": [
+    { "binding": "CONSOLE", "id": "e213bc6e5b314058a02d5aa489d71bfb" }
+  ],
+  "rules": [
+    { "type": "Text", "globs": ["**/*.html"] }
+  ],
+  "assets": { "directory": "./assets" }
+}

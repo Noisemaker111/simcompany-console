@@ -1,0 +1,10 @@
+base-1100.png 17604
+base-0110.png 17983
+base-0001.png 17256
+base-1111.png 21158
+base-1001.png 18027
+base-0010.png 17215
+base-1000.png 18045
+base-0100.png 16122
+base-0011.png 18103
+c-grocery-idle-t1.png 23326

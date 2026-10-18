@@ -1,0 +1,22 @@
+{
+  "top": { "cash": "$421", "credits": "5", "level": "Lv. 0 (20%)" },
+  "overlay": [
+    { "c": 2, "r": 0, "dy": -180, "html": "15m", "pulse": true, "css": "min-width:56px;" },
+    { "c": 0, "r": 2, "dy": -170, "html": "GROCERY STORE<br><span class='sub'>LVL 1</span>" },
+    { "c": 4, "r": 0, "dy": -170, "html": "EXCHANGE" },
+    { "c": 4, "r": 2, "dy": -190, "html": "JONSCOMPANY111" },
+    { "c": 2, "r": 4, "dy": -140, "html": "CONSTRUCTION SLOT" },
+    { "c": 4, "r": 4, "dy": -140, "html": "CONSTRUCTION SLOT" },
+    { "c": 6, "r": 0, "dy": -150, "html": "UNLOCK 50", "kind": "blue" }
+  ],
+  "now": "Farm is producing 1,500 seeds (~15m left). Grocery store sold the last 35 apples today at $7.",
+  "next": "When seeds finish: 1hr apples run (606 seeds + 202 water) -> restock store at $7.",
+  "plan": [
+    "Seeds run finishes -> launch 1hr apples run",
+    "Stock store with fresh apples at $7, restock as it empties",
+    "If retail demand too slow, dump surplus apples on the exchange at best bid",
+    "Rebuy water when warehouse drops under ~150 (at ~$0.35/unit)",
+    "Collect pickups + achievements to push level 0 -> 1 (unlocks longer runs)",
+    "Goal: level + cash until we can build construction-units production (long grind)"
+  ]
+}

@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset=utf-8><title>picks2</title>
+<style>body{background:#2a2a2a;color:#fff;font-family:monospace}img{width:190px;height:190px;object-fit:contain;background:#3a3a3a;margin:2px}div{display:inline-block;text-align:center;font-size:10px}</style></head>
+<body><div id="g"></div>
+<script>
+const names = ['base-1111','base-1100','base-0110','base-1001','base-0011','base-0001','base-1000','base-0100','base-0010','c-grocery-idle-t1','decor-plaza','building-money','building-farm-lvl1','building-grocery2-lvl1','decor-residential4','decor-residential31','decor-residential21','decor-empty2','decor-park','sroad-00','sroad-left-00'];;
+document.getElementById('g').innerHTML = names.map(n => `<div><img src="/assets/${n}.png"><br>${n}</div>`).join('');
+</script></body></html>

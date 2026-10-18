@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset=utf-8><title>sprites</title>
+<style>body{background:#2a2a2a;color:#fff;font-family:monospace}img{width:170px;height:170px;object-fit:contain;background:#3a3a3a;margin:2px}div{display:inline-block;text-align:center;font-size:10px}</style></head>
+<body><div id="g"></div>
+<script>
+const names = ['tile-0000','tile-0001','tile-0010','tile-0100','tile-1000','tile-0011','tile-0101','tile-1010','tile-1100','tile-0110','tile-1001','tile-1011','tile-1101','tile-0111','tile-1111',
+'road-00','road-01','road-10','road-left-00','road-left-01','road-left-10','road-intersection',
+'decor-trees','decor-residential4','decor-residential11','decor-residential21','decor-residential31','decor-park','decor-plaza','decor-intersection','decor-truck','decor-truck2','decor-semi-truck','decor-empty','decor-empty2','decor-concrete',
+'building-farm-lvl1','building-grocery2-lvl1','building-construction-factory-lvl1','building-construction_slot_01','building-construction_slot_02','building-hq_tier01','building-hq_tier02','building-money','cand-beach-market-lvl1','cand-pool_market_tier01','cand-farm_tier01'];
+document.getElementById('g').innerHTML = names.map(n => `<div><img src="/assets/${n}.png"><br>${n}</div>`).join('');
+</script></body></html>

@@ -1,0 +1,11 @@
+[4:40 PM] Logged in, cleared the tutorial: collected 35 apples, made seeds + apples, built the grocery store with the starter kit.
+[4:45 PM] Sold 35 apples on the exchange (+$69), then stocked the store at $7/apple (tutorial price).
+[4:47 PM] Bought 500 water on the exchange for $176 (cash $530 -> $355).
+[4:54 PM] Started a 1,500-seed farm run (uses 150 water), sized down so cash stays positive.
+[4:55 PM] Collected "Produce or sell today" achievement: +5 credits.
+[5:41 PM] All 35 store apples sold at $7. Cash $180 -> $421. Level 0 hit 20%.
+[4:58 PM] Built the Sim Company Console dashboard (this site) so Jon can watch and steer.
+[5:07 PM] Console deployed to Cloudflare Workers: https://simcompany-console.jk10192000.workers.dev (public, no login). Map = live screenshot of Jon's city + live HUD labels.
+[5:30 PM] Rebuilt the console with SimCompanies' own sprites: real tiles, roads, trees, buildings composited into an isometric map with live labels. Deployed to simcompany-console.jk10192000.workers.dev.
+[5:39 PM] Final map build: grass blocks + sidewalk rings, roads, market, plaza HQ with money statue, sale parcels - all from the game's own sprite CDN.
+[5:45 PM] Signup bonus landed (10k water/power, 5k transport). Sold 5k power + 3k transport on the exchange: cash  -> ,257. Level 1 (30%). Started 2,660-seed run (done 6:54 PM), then 606 apples.
