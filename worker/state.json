@@ -1,8 +1,8 @@
 {
-  "ts": "2026-10-18T17:58:00-04:00",
+  "ts": "2026-10-18T18:25:00-04:00",
   "top": { "cash": "$2,257", "credits": "5", "level": "Lv 1 (30%)" },
   "cards": [
-    { "label": "Cash", "value": "$2,257", "sub": "+$1,997 from spare bonus resources" },
+    { "label": "Cash", "value": "$2,257", "sub": "assets: ~$5.6k warehouse value" },
     { "label": "Level", "value": "1 (30%)", "sub": "XP from producing + selling" },
     { "label": "Farm", "value": "Producing", "sub": "2,660 seeds — done 6:54 PM" },
     { "label": "Store", "value": "Empty", "sub": "restock after apples run" },
@@ -10,7 +10,7 @@
     { "label": "Credits", "value": "5", "sub": "unlock needs 50" }
   ],
   "buildings": [
-    { "name": "Farm", "level": 1, "status": "2,660 seeds · 6:54 PM", "progress": 0.3 },
+    { "name": "Farm", "level": 1, "status": "2,660 seeds · 6:54 PM", "progress": 0.42 },
     { "name": "Grocery store", "level": 1, "status": "empty — restock pending", "state": "idle" },
     { "name": "Company HQ", "level": 1, "status": "running" },
     { "name": "Construction slot 1", "level": 0, "status": "free", "state": "idle" },
@@ -24,6 +24,14 @@
     { "name": "Seeds", "qty": 115, "unit": "$0.16" },
     { "name": "Apples", "qty": 0, "unit": "$2.40 bid" }
   ],
+  "store": { "Shelf": "empty", "Last listing": "35 apples @ $7 — all sold", "Next restock": "after 6:54 PM run", "Price plan": "$7 avg ~$1.05/u profit" },
+  "prices": [
+    { "name": "Apples", "bid": "$2.40", "ask": null },
+    { "name": "Water", "bid": null, "ask": "$0.352" },
+    { "name": "Power", "bid": "$0.239", "ask": "$0.240" },
+    { "name": "Transport", "bid": null, "ask": "$0.348" },
+    { "name": "Seeds", "bid": null, "ask": "$0.15" }
+  ],
   "actions": [
     { "text": "Collect tutorial rewards + achievements", "status": "done" },
     { "text": "Buy 500 water on exchange", "status": "done" },
@@ -33,7 +41,8 @@
     { "text": "Sell 3,000 transport @ $0.347", "status": "done" },
     { "text": "Produce 2,660 seeds (1hr)", "status": "doing" },
     { "text": "Produce 606 apples (1hr) after seeds", "status": "queued" },
-    { "text": "Restock grocery store @ $7", "status": "queued" }
+    { "text": "Restock grocery store @ $7", "status": "queued" },
+    { "text": "Collect level-up + daily achievement rewards", "status": "queued" }
   ],
   "now": "Farm is mid-run on 2,660 seeds (finishes 6:54 PM). Cash is cushioned at $2,257 after selling spare signup-bonus power and transport on the exchange.",
   "next": "6:54 PM: launch 606-apple run (1,818 seeds + 606 water), then restock the store at $7 and keep the loop going.",
@@ -46,12 +55,14 @@
     "Forever goal: build construction-units production"
   ],
   "history": [
-    { "t": "17:35", "cash": 530, "water": 0, "power": 0, "transport": 0, "seeds": 115 },
-    { "t": "17:47", "cash": 355, "water": 500, "power": 0, "transport": 0, "seeds": 115 },
-    { "t": "17:54", "cash": 180, "water": 350, "power": 0, "transport": 0, "seeds": 115 },
-    { "t": "18:41", "cash": 421, "water": 350, "power": 10000, "transport": 5000, "seeds": 1615 },
-    { "t": "18:54", "cash": 111, "water": 10100, "power": 10000, "transport": 5000, "seeds": 115 },
-    { "t": "18:56", "cash": 1258, "water": 10100, "power": 5000, "transport": 5000, "seeds": 115 },
-    { "t": "18:58", "cash": 2257, "water": 10100, "power": 5000, "transport": 2000, "seeds": 115 }
+    { "t": "17:35", "cash": 530, "water": 0, "power": 0, "transport": 0, "seeds": 115, "apples": 0 },
+    { "t": "17:47", "cash": 355, "water": 500, "power": 0, "transport": 0, "seeds": 115, "apples": 0 },
+    { "t": "17:54", "cash": 180, "water": 350, "power": 0, "transport": 0, "seeds": 115, "apples": 35 },
+    { "t": "18:41", "cash": 421, "water": 350, "power": 10000, "transport": 5000, "seeds": 1615, "apples": 0 },
+    { "t": "18:54", "cash": 111, "water": 10100, "power": 10000, "transport": 5000, "seeds": 115, "apples": 0 },
+    { "t": "18:56", "cash": 1258, "water": 10100, "power": 5000, "transport": 5000, "seeds": 115, "apples": 0 },
+    { "t": "18:58", "cash": 2257, "water": 10100, "power": 5000, "transport": 2000, "seeds": 115, "apples": 0 },
+    { "t": "19:20", "cash": 2257, "water": 9800, "power": 5000, "transport": 2000, "seeds": 115, "apples": 0 },
+    { "t": "19:25", "cash": 2257, "water": 9800, "power": 5000, "transport": 2000, "seeds": 115, "apples": 0 }
   ]
 }
