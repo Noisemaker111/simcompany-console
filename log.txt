@@ -9,3 +9,4 @@
 [5:30 PM] Rebuilt the console with SimCompanies' own sprites: real tiles, roads, trees, buildings composited into an isometric map with live labels. Deployed to simcompany-console.jk10192000.workers.dev.
 [5:39 PM] Final map build: grass blocks + sidewalk rings, roads, market, plaza HQ with money statue, sale parcels - all from the game's own sprite CDN.
 [5:45 PM] Signup bonus landed (10k water/power, 5k transport). Sold 5k power + 3k transport on the exchange: cash  -> ,257. Level 1 (30%). Started 2,660-seed run (done 6:54 PM), then 606 apples.
+[5:58 PM] Console rebuilt as a full control-room dashboard: buildings, warehouse, slots, cash + warehouse graphs, live action queue, steering. Game-look dropped per Jon.

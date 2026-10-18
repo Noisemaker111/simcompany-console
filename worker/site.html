@@ -2,261 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Sim Companies - Jon's City</title>
+<title>Sim Company Console</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; margin: 0; }
-  html, body { height: 100%; }
-  body { background: radial-gradient(120% 120% at 50% 30%, #17242a 0%, #0d1518 55%, #06090a 100%);
-         font-family: 'Roboto Condensed', 'Segoe UI', sans-serif; overflow: hidden; }
-
-  /* live HUD pills */
-  .pill { position: absolute; transform: translate(-50%, -50%); white-space: nowrap;
-          font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.8);
-          display: inline-flex; align-items: center; justify-content: center; gap: 4px; pointer-events: none;
-          font-size: 15px; z-index: 10; }
-  .shop { background: rgba(20,24,28,.75); border-radius: 3px; padding: 2px 10px;
-          text-transform: uppercase; display: inline-flex; flex-direction: column; align-items: center; line-height: 1.3; }
-  .shop .sub { font-size: .8em; opacity: .85; }
-  .pulse { animation: pulse 2.4s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .55 } }
-
-  /* top bar */
-  .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 30; display: flex; justify-content: flex-end;
-            align-items: flex-start; padding: 6px 10px; pointer-events: none; }
-  .topbar .right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
-  .cashbar { background: linear-gradient(#8fd231, #6cab21); border-radius: 4px; padding: 3px 40px; }
-  .row2 { display: flex; gap: 4px; }
-  .blue { background: linear-gradient(#79b8e0, #4d94c4); border-radius: 4px; padding: 3px 22px 3px 14px; }
-  .dark { background: rgba(28,34,40,.92); border-radius: 4px; padding: 3px 12px; }
-
-  /* bottom nav */
-  .navbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 30; height: 46px;
-            background: rgba(12,15,17,.92); border-top: 1px solid rgba(255,255,255,.06);
-            display: flex; justify-content: center; gap: 7vw; align-items: center;
-            color: #e6eef2; font-size: 16px; }
-  .navbar span { display: inline-flex; gap: 8px; align-items: center; opacity: .95; }
-
-  .toggle { position: fixed; left: 10px; top: 10px; z-index: 50; background: rgba(20,24,28,.85);
-            color: #cfe3ea; border: 1px solid #2a353a; border-radius: 6px; padding: 6px 12px; cursor: pointer;
-            font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: .05em; }
-  .toggle:hover { background: rgba(40,50,58,.9); }
-
-  .panel { position: fixed; z-index: 40; left: 10px; top: 46px; width: 380px; max-width: calc(100vw - 20px);
-           max-height: calc(100vh - 60px); overflow: auto; display: none;
-           background: rgba(13,17,20,.97); border: 1px solid #2a353a; border-radius: 10px; padding: 14px 16px; color: #dfe7ea; }
-  .panel.open { display: block; }
-  .panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #9fb4bd; margin: 12px 0 8px; }
-  .panel h2:first-child { margin-top: 0; }
-  .panel .stat { font-size: 14px; line-height: 1.5; }
-  .panel .muted { color: #68808c; font-size: 12px; margin-top: 4px; }
-  .panel ol.plan { padding-left: 18px; }
-  .panel ol.plan li { margin: 4px 0; font-size: 13px; color: #b8c7cf; }
-  .panel ul.log { list-style: none; padding: 0; max-height: 220px; overflow: auto; }
-  .panel ul.log li { padding: 4px 0; border-bottom: 1px solid #232d31; font-size: 12.5px; color: #b8c7cf; }
-  .panel ul.log time { color: #68808c; margin-right: 6px; }
-  .panel .row { display: flex; gap: 8px; margin-top: 8px; }
-  .panel input[type=text] { flex: 1; background: #1d2629; color: #dfe7ea; border: 1px solid #2a353a; border-radius: 6px; padding: 8px 10px; font-size: 13px; }
-  .panel button.go { background: #2b6f43; color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-family: inherit; }
-  .panel button.go:hover { background: #338654; }
-  .quick { display: flex; flex-wrap: wrap; gap: 6px; }
-  .quick button { background: #24435a; color: #fff; border: 0; border-radius: 6px; padding: 6px 10px; cursor: pointer; font-family: inherit; font-size: 12px; }
+  body { background: #0d1114; color: #dfe7ea; font-family: 'Roboto Condensed', system-ui, sans-serif; }
+  header { display: flex; align-items: center; gap: 18px; padding: 12px 20px; background: #131a1e;
+           border-bottom: 1px solid #232d33; position: sticky; top: 0; z-index: 10; }
+  header h1 { font-size: 17px; letter-spacing: .06em; text-transform: uppercase; }
+  .live { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: #1d3a26; color: #7ee787; }
+  .live.stale { background: #3a2c12; color: #f3c261; }
+  header .m { color: #68808c; font-size: 12px; }
+  header .cash { margin-left: auto; font-size: 20px; font-weight: 700; color: #7ee787; }
+  main { max-width: 1400px; margin: 0 auto; padding: 16px 20px 60px; display: grid; gap: 14px;
+         grid-template-columns: repeat(12, 1fr); }
+  section { background: #131a1e; border: 1px solid #232d33; border-radius: 10px; padding: 14px 16px; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: #8fa9b5; margin-bottom: 10px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .card { background: #1a2328; border-radius: 8px; padding: 10px 12px; }
+  .card .k { font-size: 11px; color: #7d97a4; text-transform: uppercase; letter-spacing: .06em; }
+  .card .v { font-size: 19px; font-weight: 700; margin-top: 3px; }
+  .card .s { font-size: 12px; color: #8fa9b5; margin-top: 2px; }
+  .b { padding: 8px 0; border-bottom: 1px solid #1f292f; }
+  .b:last-child { border-bottom: 0; }
+  .b .row { display: flex; align-items: baseline; gap: 10px; }
+  .b .name { font-weight: 700; font-size: 15px; }
+  .b .lvl { color: #7d97a4; font-size: 12px; }
+  .b .st { margin-left: auto; font-size: 13px; color: #7ee787; }
+  .b .st.idle { color: #f3c261; }
+  .b .bar { height: 5px; background: #1a2328; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+  .b .bar i { display: block; height: 100%; background: linear-gradient(90deg, #2f9e55, #7ee787); border-radius: 3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; color: #7d97a4; font-weight: 400; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 6px; }
+  td { padding: 5px 6px; border-top: 1px solid #1f292f; }
+  td.n { text-align: right; font-weight: 700; }
+  td.d { text-align: right; color: #8fa9b5; }
+  .doing { list-style: none; padding: 0; }
+  .doing li { padding: 7px 0 7px 30px; position: relative; font-size: 14px; border-bottom: 1px solid #1f292f; }
+  .doing li:last-child { border: 0; }
+  .doing li::before { content: ''; position: absolute; left: 6px; top: 12px; width: 9px; height: 9px; border-radius: 50%; background: #3d4c55; }
+  .doing li.done { color: #7d97a4; text-decoration: line-through; }
+  .doing li.done::before { background: #2f9e55; }
+  .doing li.doing::before { background: #f3c261; animation: blink 1.4s infinite; }
+  .doing li.doing { color: #ffe9a6; }
+  @keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: .3 } }
+  ol.plan { padding-left: 20px; font-size: 13.5px; color: #b8c7cf; }
+  ol.plan li { margin: 4px 0; }
+  .nowbox { font-size: 15px; line-height: 1.5; }
+  .next { color: #f3c261; font-size: 13px; margin-top: 6px; }
+  ul.log { list-style: none; padding: 0; max-height: 260px; overflow: auto; }
+  ul.log li { padding: 5px 0; border-bottom: 1px solid #1f292f; font-size: 13px; color: #b8c7cf; }
+  ul.log time { color: #68808c; margin-right: 8px; font-size: 11px; }
+  .chart svg { width: 100%; height: auto; }
+  .legend { display: flex; gap: 14px; font-size: 11px; color: #8fa9b5; margin-top: 4px; }
+  .legend i { display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .steer .row { display: flex; gap: 8px; margin-top: 10px; }
+  .steer input[type=text] { flex: 1; background: #1a2328; color: #dfe7ea; border: 1px solid #232d33; border-radius: 8px; padding: 9px 12px; font-size: 13px; }
+  .steer button { background: #2b6f43; color: #fff; border: 0; border-radius: 8px; padding: 9px 14px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .steer button:hover { background: #338654; }
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; }
+  .quick button { background: #24435a; padding: 7px 11px; font-size: 12px; }
   .quick button:hover { background: #2f5a77; }
-  .cmdline { font-size: 12px; color: #8aa0aa; margin-top: 6px; }
+  .cmds { font-size: 12px; color: #8fa9b5; margin-top: 8px; max-height: 90px; overflow: auto; }
+  .cmds div { padding: 3px 0; border-bottom: 1px solid #1f292f; }
+  .g2 { grid-column: span 4; } .g3 { grid-column: span 3; } .g4 { grid-column: span 4; } .g6 { grid-column: span 6; } .g8 { grid-column: span 8; } .g12 { grid-column: span 12; }
+  @media (max-width: 1100px) { .g2,.g3,.g4,.g6,.g8 { grid-column: span 12; } }
+  .foot { text-align: center; color: #4d6472; font-size: 11px; padding: 10px; }
 </style>
 </head>
 <body>
-<button class="toggle" id="toggle">CONSOLE</button>
-<div class="panel" id="panel">
-  <h2>Now</h2>
-  <div class="stat" id="now">loading…</div>
-  <div class="muted" id="next"></div>
-  <h2>Plan</h2>
-  <ol class="plan" id="plan"></ol>
-  <h2>Steer</h2>
-  <div class="quick">
-    <button data-c="status">Report status</button>
-    <button data-c="dump apples on exchange at best bid">Dump apples on exchange</button>
-    <button data-c="raise store price">Raise store prices</button>
-    <button data-c="buy lots of water">Buy water</button>
-    <button data-c="pause">Hold / pause</button>
-    <button data-c="resume">Resume</button>
-  </div>
-  <div class="row">
-    <input id="cmd" type="text" placeholder="Type a command, then Enter" />
-    <button class="go" id="send">Send</button>
-  </div>
-  <div class="cmdline" id="cmdlog"></div>
-  <h2>What Jon's agent did</h2>
-  <ul class="log" id="log"></ul>
-</div>
+<header>
+  <h1>Sim Company Console</h1>
+  <span class="live" id="live">checking…</span>
+  <span class="m" id="upd"></span>
+  <span class="cash" id="h-cash">$0</span>
+</header>
+<main>
+  <section class="g12">
+    <h2>What the agent is doing right now</h2>
+    <div class="nowbox" id="now">loading…</div>
+    <div class="next" id="next"></div>
+    <div class="cards" id="cards" style="margin-top:12px"></div>
+  </section>
 
-<div class="topbar"><div class="right">
-  <div class="cashbar" id="t-cash">$0</div>
-  <div class="row2"><div class="blue" id="t-credits">&#9733; 0</div><div class="dark" id="t-level">Lv. 0</div></div>
-</div></div>
+  <section class="g4">
+    <h2>Buildings & slots</h2>
+    <div id="buildings"></div>
+  </section>
 
-<div class="navbar">
-  <span>&#128506; Map</span><span>&#128230; Warehouse</span><span>&#128269; Search</span><span>&#128172; Chat</span><span>&#8646; Exchange</span>
-</div>
+  <section class="g4">
+    <h2>Warehouse</h2>
+    <table><thead><tr><th>Item</th><th style="text-align:right">Qty</th><th style="text-align:right">Unit $</th></tr></thead>
+    <tbody id="inv"></tbody></table>
+  </section>
 
-<div id="world" style="position:absolute; transform-origin: 0 0;"></div>
+  <section class="g4">
+    <h2>Steer</h2>
+    <div class="quick">
+      <button data-c="status">Report status</button>
+      <button data-c="dump apples on exchange at best bid">Dump apples</button>
+      <button data-c="raise store price">Raise store prices</button>
+      <button data-c="buy lots of water">Buy water</button>
+      <button data-c="pause">Hold / pause</button>
+      <button data-c="resume">Resume</button>
+    </div>
+    <div class="row">
+      <input id="cmd" type="text" placeholder="Type a command for the agent, then Enter" />
+      <button id="send">Send</button>
+    </div>
+    <div class="cmds" id="cmds"></div>
+  </section>
+
+  <section class="g8 chart">
+    <h2>Cash history</h2>
+    <div id="chart-cash"></div>
+    <div class="legend"><span><i style="background:#7ee787"></i>cash ($)</span></div>
+  </section>
+
+  <section class="g4 chart">
+    <h2>Warehouse history</h2>
+    <div id="chart-inv"></div>
+    <div class="legend" id="legend-inv"></div>
+  </section>
+
+  <section class="g4">
+    <h2>Plan</h2>
+    <ol class="plan" id="plan"></ol>
+  </section>
+
+  <section class="g4">
+    <h2>Action queue</h2>
+    <ul class="doing" id="doing"></ul>
+  </section>
+
+  <section class="g4">
+    <h2>What I did (log)</h2>
+    <ul class="log" id="log"></ul>
+  </section>
+</main>
+<div class="foot">simcompany-console • runs on Cloudflare Workers • data pushed by Jon's agent</div>
 
 <script>
-  // ---------- isometric world built from SimCompanies' own sprites (spring season) ----------
-  const CELLX = 219, CELLY = 110;      // measured: diamond width 437 -> step 219, height ~300 -> step 110
-  const OFFY = 430;                    // world y offset for tall buildings
-  const worldW = 3140, worldH = 1700;
+  const $ = (s) => document.querySelector(s);
+  const fmt = (n) => (n >= 1000 ? n.toLocaleString('en-US') : '' + n);
 
-  // grid[r][c]: 'road' = street grid; else block kind  (7 cols x 5 rows, roads at odd indices)
-  const G = [
-    ['resA', 'road', 'farm',   'road', 'resB',   'road', 'pines'],
-    ['road', 'road', 'road',   'road', 'road',   'road', 'road'],
-    ['store', 'road', 'park',  'road', 'exchange', 'road', 'hq'],
-    ['road', 'road', 'road',   'road', 'road',   'road', 'road'],
-    ['res21', 'road', 'constr1', 'road', 'constr2', 'road', 'pines2'],
-  ];
-  const R = 5, C = 7;
-  const ITEMS = {
-    resA: ['decor-residential4.png'], resB: ['decor-residential31.png'], res21: ['decor-residential21.png'],
-    park: ['decor-park.png'],
-    farm: ['building-farm-lvl1.png'], store: ['building-grocery2-lvl1.png'],
-    exchange: ['c-grocery-idle-t1.png'], hq: ['decor-plaza.png', 'building-money.png'],
-    constr1: ['building-construction_slot_01.png'], constr2: ['building-construction_slot_02.png'],
-  };
-  const VIDEO = [];
-  // trucks parked on streets
-  const PROPS = [ ['decor-truck.png', 1, 2], ['decor-truck2.png', 3, 4] ];
-
-  function cellXY(c, r) { return { x: (c - r) * CELLX + worldW / 2, y: (c + r) * CELLY + OFFY }; }
-
-  const world = document.getElementById('world');
-  world.style.width = worldW + 'px';
-  world.style.height = worldH + 'px';
-
-  function fit() {
-    const s = window.innerWidth / worldW;
-    world.style.transform = 'scale(' + s + ')';
-    world.style.left = '0px';
-    world.style.top = Math.max(0, (window.innerHeight - worldH * s) / 2 - 20) + 'px';
-  }
-  window.addEventListener('resize', fit);
-
-  let OFF = {};
-  const CX = (o) => (o.x0 + o.x1) / 2;
-  function img(src, x, y, anchor, z, extraCss) {
-    const o = OFF[src];
-    const cx = o ? CX(o) : 256;
-    const el = VIDEO.includes(src) ? document.createElement('video') : document.createElement('img');
-    if (el.tagName === 'VIDEO') {
-      el.src = src; el.autoplay = true; el.loop = true; el.muted = true; el.playsInline = true; el.style.width = '512px'; el.style.height = '512px';
-    } else {
-      el.src = src;
-    }
-    el.style.position = 'absolute';
-    el.style.zIndex = z;
-    if (extraCss) el.style.cssText += extraCss;
-    if (anchor === 'bottom') {
-      const y1 = o ? o.y1 : 460;
-      el.style.left = (x - cx) + 'px';
-      el.style.top = (y - y1) + 'px';
-    } else {
-      // ground: anchor the top diamond's center (bbox includes the front skirt)
-      const cy = o ? o.y0 + (o.y1 - o.y0) * 0.36 : 256;
-      el.style.left = (x - cx) + 'px';
-      el.style.top = (y - cy) + 'px';
-    }
-    world.appendChild(el);
+  function spark(data, color, w, h) {
+    if (!data || data.length < 2) return '<svg viewBox="0 0 ' + w + ' ' + h + '"><text x="10" y="30" fill="#4d6472" font-size="12">not enough points yet</text></svg>';
+    const min = Math.min(...data), max = Math.max(...data);
+    const rng = (max - min) || 1;
+    const pts = data.map((v, i) => [ (i / (data.length - 1)) * (w - 8) + 4, h - 8 - ((v - min) / rng) * (h - 20) ]);
+    const line = pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+    const area = pts[0][0].toFixed(1) + ',' + (h - 4) + ' ' + line + ' ' + pts[pts.length - 1][0].toFixed(1) + ',' + (h - 4);
+    return `<svg viewBox="0 0 ${w} ${h}">
+      <polygon points="${area}" fill="${color}" opacity="0.12"/>
+      <polyline points="${line}" fill="none" stroke="${color}" stroke-width="2"/>
+      <text x="6" y="14" fill="#8fa9b5" font-size="11">${fmt(max)}</text>
+      <text x="6" y="${h - 4}" fill="#8fa9b5" font-size="11">${fmt(min)}</text>
+    </svg>`;
   }
 
-  function build() {
-    // ground + roads sorted back-to-front so front skirts overlap rear ones
-    const ground = [];
-    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
-      const p = cellXY(c, r);
-      if (G[r][c] === 'road') {
-        if (r % 2 === 1 && c % 2 === 1) {
-          // crossing: the intersection sprite is a placeholder, so superimpose the two strips
-          ground.push({ s: 'sroad-00.png', x: p.x, y: p.y, z: 1 + c + r });
-          ground.push({ s: 'sroad-left-00.png', x: p.x, y: p.y, z: 2 + c + r });
-        } else if (r % 2 === 1) {
-          ground.push({ s: c === 0 ? 'sroad-10.png' : c === C - 1 ? 'sroad-01.png' : 'sroad-00.png', x: p.x, y: p.y, z: 1 + c + r });
-        } else {
-          ground.push({ s: r === 0 ? 'sroad-left-01.png' : r === R - 1 ? 'sroad-left-10.png' : 'sroad-left-00.png', x: p.x, y: p.y, z: 1 + c + r });
-        }
-      } else if (G[r][c] === 'pines' || G[r][c] === 'pines2') {
-        // for-sale pine parcel (the UNLOCKable land look)
-        ground.push({ s: 'decor-empty2.png', x: p.x, y: p.y, z: 1 + c + r });
-      } else {
-        // grass block with sidewalk ring (the real map's block base)
-        ground.push({ s: 'base-1111.png', x: p.x, y: p.y, z: 1 + c + r });
-      }
-    }
-    for (const g of ground) img(g.s, g.x, g.y, 'ground', g.z);
-    const items = [];
-    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
-      const list = ITEMS[G[r][c]];
-      if (list) for (const s of list) items.push({ s, c, r });
-    }
-    for (const [s, c, r, above] of PROPS) items.push({ s, c, r, prop: true, above });
-    items.sort((a, b) => (a.c + a.r) - (b.c + b.r));
-    for (const it of items) {
-      const p = cellXY(it.c, it.r);
-      img(it.s, p.x + (it.above ? 60 : 0), p.y + (it.above ? -60 : 52), 'bottom', it.above ? 40 : 20 + it.c + it.r);
-    }
-  }
-
-  function pill(o) {
-    const d = document.createElement('div');
-    d.className = 'pill ' + (o.kind || 'shop') + (o.pulse ? ' pulse' : '');
-    const p = cellXY(o.c, o.r);
-    d.style.left = ((p.x / worldW) * 100) + '%';
-    d.style.top = (((p.y + (o.dy || 0)) / worldH) * 100) + '%';
-    if (o.css) d.style.cssText += ';' + o.css;
-    d.innerHTML = o.html;
-    world.appendChild(d);
-  }
-
+  function pill(o) {}
   async function load() {
+    let s;
     try {
-      const s = await fetch('/api/state').then(r => r.json());
-      if (s.top) {
-        document.getElementById('t-cash').textContent = s.top.cash || '$0';
-        document.getElementById('t-credits').innerHTML = '&#9733; ' + (s.top.credits || '0');
-        document.getElementById('t-level').textContent = s.top.level || 'Lv. 0';
-      }
-      world.querySelectorAll('.pill').forEach(e => e.remove());
-      for (const o of s.overlay || []) pill(o);
-      document.getElementById('now').innerHTML = s.now || '';
-      document.getElementById('next').textContent = s.next ? ('Next move: ' + s.next) : '';
-      document.getElementById('plan').innerHTML = (s.plan || []).map(p => '<li>' + p + '</li>').join('');
-      const log = await fetch('/api/log').then(r => r.text());
-      const entries = log.split('\n').filter(Boolean).reverse().slice(0, 40);
-      document.getElementById('log').innerHTML = entries.map(e => '<li>' + e + '</li>').join('');
-      const cl = await fetch('/api/cmdlog').then(r => r.json()).catch(() => []);
-      document.getElementById('cmdlog').textContent = cl.length ? ('last command: ' + cl[cl.length - 1].text + ' (' + cl[cl.length - 1].status + ')') : '';
-    } catch (e) { document.getElementById('now').textContent = 'server unreachable'; }
+      s = await fetch('/api/state').then(r => r.json());
+    } catch (e) { $('#live').textContent = 'server unreachable'; return; }
+    const age = s.ts ? (Date.now() - new Date(s.ts).getTime()) / 1000 : 9e9;
+    const live = $('#live');
+    if (age < 180) { live.textContent = 'agent live'; live.className = 'live'; }
+    else { live.textContent = 'agent idle (' + Math.min(999, Math.round(age / 60)) + 'm)'; live.className = 'live stale'; }
+    $('#h-cash').textContent = s.top && s.top.cash || '$0';
+    $('#upd').textContent = s.ts ? 'updated ' + new Date(s.ts).toLocaleTimeString() : '';
+    $('#now').innerHTML = s.now || '';
+    $('#next').textContent = s.next ? ('Next: ' + s.next) : '';
+    $('#cards').innerHTML = (s.cards || []).map(c => `<div class="card"><div class="k">${c.label}</div><div class="v">${c.value}</div>${c.sub ? `<div class="s">${c.sub}</div>` : ''}</div>`).join('');
+    $('#buildings').innerHTML = (s.buildings || []).map(b => `
+      <div class="b"><div class="row"><span class="name">${b.name}</span><span class="lvl">Lv ${b.level}</span>
+      <span class="st ${b.state || ''}">${b.status}</span></div>
+      ${b.progress != null ? `<div class="bar"><i style="width:${Math.round(b.progress * 100)}%"></i></div>` : ''}</div>`).join('');
+    $('#inv').innerHTML = (s.inventory || []).map(i => `<tr><td>${i.name}</td><td class="n">${fmt(i.qty)}</td><td class="d">${i.unit || ''}</td></tr>`).join('');
+    $('#plan').innerHTML = (s.plan || []).map(p => `<li>${p}</li>`).join('');
+    $('#doing').innerHTML = (s.actions || []).map(a => `<li class="${a.status}">${a.text}</li>`).join('');
+    const log = await fetch('/api/log').then(r => r.text()).catch(() => '');
+    $('#log').innerHTML = log.split('\n').filter(Boolean).reverse().slice(0, 40).map(e => `<li>${e}</li>`).join('');
+    const cl = await fetch('/api/cmdlog').then(r => r.json()).catch(() => []);
+    $('#cmds').innerHTML = cl.slice(-6).reverse().map(x => `<div>[${x.status}] ${x.text}</div>`).join('');
+    const h = s.history || [];
+    $('#chart-cash').innerHTML = spark(h.map(x => x.cash), '#7ee787', 600, 130);
+    const INV = [['water', '#4d94c4', 'Water'], ['power', '#f3c261', 'Power'], ['transport', '#c48d4d', 'Transport'], ['seeds', '#a6d96a', 'Seeds']];
+    $('#chart-inv').innerHTML = spark(h.map(x => x.water), '#4d94c4', 300, 130);
+    $('#legend-inv').innerHTML = INV.map(([k, c, n]) => `<span><i style="background:${c}"></i>${n}</span>`).join('');
   }
 
-  (async () => {
-    OFF = await fetch('/offsets.json').then(r => r.json());
-    build();
-    fit();
-    load();
-  })();
-  setInterval(load, 5000);
-
-  document.getElementById('toggle').addEventListener('click', () => document.getElementById('panel').classList.toggle('open'));
   function send(text) {
     if (!text || !text.trim()) return;
     fetch('/api/command', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text }) }).then(load);
   }
   document.querySelectorAll('.quick button').forEach(b => b.addEventListener('click', () => send(b.dataset.c)));
-  document.getElementById('send').addEventListener('click', () => { send(document.getElementById('cmd').value); document.getElementById('cmd').value = ''; });
-  document.getElementById('cmd').addEventListener('keydown', e => { if (e.key === 'Enter') { send(document.getElementById('cmd').value); document.getElementById('cmd').value = ''; } });
+  $('#send').addEventListener('click', () => { send($('#cmd').value); $('#cmd').value = ''; });
+  $('#cmd').addEventListener('keydown', e => { if (e.key === 'Enter') { send($('#cmd').value); $('#cmd').value = ''; } });
+
+  load();
+  setInterval(load, 5000);
 </script>
 </body>
 </html>
