@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sim Company Console</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: 'Segoe UI', system-ui, sans-serif; background:#111517; color:#dfe7ea; }
+  header { padding:14px 20px; background:#161d20; border-bottom:1px solid #2a353a; display:flex; align-items:center; gap:16px; }
+  header h1 { font-size:18px; margin:0; font-weight:600; }
+  header .live { font-size:12px; color:#7ee787; }
+  header .dead { font-size:12px; color:#ff7b72; }
+  main { display:grid; grid-template-columns: 1.2fr 1fr; gap:16px; padding:16px 20px; max-width:1500px; }
+  section { background:#161d20; border:1px solid #2a353a; border-radius:10px; padding:14px 16px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:#9fb4bd; margin:0 0 10px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
+  .stat { background:#1d2629; border-radius:8px; padding:10px 12px; }
+  .stat .k { font-size:11px; color:#8aa0aa; }
+  .stat .v { font-size:20px; font-weight:600; margin-top:2px; }
+  .now { font-size:15px; line-height:1.5; }
+  .plan li { margin:6px 0; line-height:1.4; }
+  .plan .t { color:#7ee787; font-weight:600; }
+  ol.plan, ul.log { padding-left:20px; margin:0; }
+  .log { list-style:none; padding:0; max-height:420px; overflow:auto; }
+  .log li { padding:6px 0; border-bottom:1px solid #232d31; font-size:13px; color:#b8c7cf; }
+  .log time { color:#68808c; margin-right:8px; font-size:11px; }
+  .cmds { max-height:180px; overflow:auto; margin-top:10px; font-size:13px; }
+  .cmds li { padding:4px 0; color:#b8c7cf; }
+  .quick { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  button { background:#2b6f43; color:#fff; border:0; border-radius:8px; padding:9px 14px; font-size:13px; cursor:pointer; }
+  button:hover { background:#338654; }
+  button.warn { background:#7a4b12; } button.warn:hover { background:#915d17; }
+  .row { display:flex; gap:8px; }
+  input[type=text] { flex:1; background:#1d2629; color:#dfe7ea; border:1px solid #2a353a; border-radius:8px; padding:9px 12px; font-size:13px; }
+  .muted { color:#68808c; font-size:12px; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sim Company Console</h1>
+  <span id="live" class="live">checking...</span>
+  <span class="muted" id="upd"></span>
+</header>
+<main>
+  <div>
+    <section>
+      <h2>NOW</h2>
+      <div class="grid" id="stats"></div>
+      <p class="now" id="now" style="margin-top:12px"></p>
+      <div class="muted" id="next"></div>
+    </section>
+    <section>
+      <h2>PLAN</h2>
+      <ol class="plan" id="plan"></ol>
+    </section>
+    <section>
+      <h2>Steer</h2>
+      <div class="quick">
+        <button data-c="status">Report status</button>
+        <button data-c="dump apples on exchange at best bid">Dump apples on exchange</button>
+        <button data-c="store price higher">Raise store prices</button>
+        <button data-c="buy lots of water">Buy lots of water</button>
+        <button class="warn" data-c="pause">Hold / pause</button>
+        <button data-c="resume">Resume</button>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <input id="cmd" type="text" placeholder="Type a command for the agent, then Enter" />
+        <button id="send">Send</button>
+      </div>
+      <ul class="cmds" id="cmds"></ul>
+      <div class="muted">Commands queue up; the agent reads and does them next time it acts. This whole thing runs locally on your machine.</div>
+    </section>
+  </div>
+  <section>
+    <h2>What I did (log)</h2>
+    <ul class="log" id="log"></ul>
+  </section>
+</main>
+<script>
+  const $ = (s) => document.querySelector(s);
+  async function load() {
+    try {
+      const [s, l, c] = await Promise.all([
+        fetch('/api/state').then(r=>r.json()),
+        fetch('/api/log').then(r=>r.text()),
+        fetch('/api/commands').then(r=>r.json()),
+      ]);
+      $('#live').textContent = 'agent connected (state written by agent)';
+      $('#live').className = 'live';
+      const g = {...s};
+      if (!g.plan) g.plan = [];
+      if (!g.logNote) g.logNote = null;
+      // stats
+      const stats = [];
+      for (const k of g.cards || []) stats.push({k: k.label, v: k.value});
+      $('#stats').innerHTML = stats.map(x=>`<div class="stat"><div class="k">${x.k}</div><div class="v">${x.v}</div></div>`).join('');
+      $('#now').innerHTML = g.now || '';
+      $('#next').textContent = g.next ? ('Next move: ' + g.next) : '';
+      $('#plan').innerHTML = (g.plan || []).map(p=>`<li>${p}</li>`).join('');
+      const entries = l.split('\n').filter(Boolean).reverse();
+      $('#log').innerHTML = entries.map(e=>`<li>${e}</li>`).join('');
+      $('#cmds').innerHTML = (c||[]).slice().reverse().map(x=>`<li>[${x.status}] ${x.created} — ${x.text}</li>`).join('');
+      $('#upd').textContent = 'updated ' + new Date().toLocaleTimeString();
+    } catch (e) {
+      $('#live').textContent = 'server down on :5178';
+      $('#live').className = 'dead';
+    }
+  }
+  function sendCmd(text) {
+    if (!text || !text.trim()) return;
+    fetch('/api/command', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({text})}).then(load);
+  }
+  document.querySelectorAll('button[data-c]').forEach(b=>b.addEventListener('click',()=>sendCmd(b.dataset.c)));
+  $('#send').addEventListener('click',()=>{ sendCmd($('#cmd').value); $('#cmd').value=''; });
+  $('#cmd').addEventListener('keydown',e=>{ if(e.key==='Enter'){ sendCmd($('#cmd').value); $('#cmd').value=''; }});
+  load();
+  setInterval(load, 3000);
+</script>
+</body>
+</html>

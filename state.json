@@ -1,0 +1,20 @@
+{
+  "cards": [
+    { "label": "Cash", "value": "$421" },
+    { "label": "Level", "value": "0 (20%)" },
+    { "label": "Farm", "value": "Lvl 1 - seeds run" },
+    { "label": "Store", "value": "Lvl 1 - empty" },
+    { "label": "Water", "value": "~350" },
+    { "label": "Seeds", "value": "~1,615 soon" }
+  ],
+  "now": "Seeds production running on the farm (1,500 seeds, ~7 min left). Store shelf empty (all 35 apples sold at $7). Water stocked from last buy.",
+  "next": "When seeds finish: start a 1hr apples run (606 seeds + 202 water) -> restock the grocery store -> keep collecting pickups and achievements.",
+  "plan": [
+    "Seeds run finishes (~5:54 PM) -> launch 1hr apples run",
+    "Stock store with fresh apples at $7, restock as it empties",
+    "If retail demand too slow, dump surplus apples on the exchange at best bid",
+    "Rebuy water when warehouse drops under ~150 (at ~$0.35/unit)",
+    "Collect pickups + achievements to push level 0 -> 1 (unlocks longer runs)",
+    "Goal: level + cash until we can build construction-units production (long grind)"
+  ]
+}
