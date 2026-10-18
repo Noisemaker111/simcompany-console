@@ -5,15 +5,19 @@ Two jobs, one project:
 1. **Play SimCompanies for Jon** (simcompanies.com, company JonsCompany111, realm 0 Magnates) through his real Chrome with Owl (`owl.exe interact browser-*`).
 2. **Keep the console dashboard live** (Cloudflare Worker, this repo's `worker/`) so Jon can watch and steer from anywhere: https://simcompany-console.jk10192000.workers.dev
 
+## Read first
+
+**[PLAYBOOK.md](PLAYBOOK.md) is the standing procedure** — session checklist, decision rules, build catalog, and the roadmap/timeline to construction-units production. Follow it top to bottom. Knowledge doc: `C:/Users/Jk101/.agents/knowledge/simcompany.md`.
+
 ## The mission: scale
 
-Jon's forever goal is to build **construction-units production** (avg $2,440/unit). That needs levels, cash and building slots. Between actions, always be maximizing:
+Jon's forever goal is to build **construction-units production** (avg $2,440/unit; the factory is ~$72k). That needs levels, cash and building slots. Between actions, always be maximizing:
 
 - Before each play session, run `node tools/market.mjs` (official GET API, **1 request/minute max, GET only**) to get current exchange prices and retail-flip margins. Buy the highest-margin fruit for the store shelf (grapes > oranges > apples today; re-verify — prices move).
-- The **store is the money engine**: buy fruit cheap on the exchange, shelve at AVG PRICE in the grocery store. Rebuy every shelf cycle.
-- The **farm** produces apples on the longest run the level allows (level 3 = 5hr orders); surplus goes to the exchange at best bid.
-- Collect every achievement / level-up banner on the map (they hand out thousands).
-- When cash allows, buy more retail capacity (upgrade store / build another store / unlock the 50-credit parcel) — more retail slots = more income per hour.
+- The **store is the money engine**: buy fruit cheap on the exchange, shelve at AVG PRICE in the grocery stores. Rebuy every shelf cycle. Two stores now.
+- The **farms** produce apples on the longest run the level allows (level 3 = 5hr orders); surplus goes to the exchange at best bid.
+- Collect every achievement / level-up banner on the map (they hand out thousands — today: $22k+ from banners) and check `/achievements/` for ready-but-uncollected rewards and next-tier targets.
+- When cash allows, buy more retail/production capacity — the build gate is in the playbook.
 - Report before/after numbers with units; state pushes update the dashboard.
 
 ## Rules

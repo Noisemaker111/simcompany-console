@@ -14,3 +14,4 @@
 [7:05 PM] Level 2 (25%). Started 2hr apples run: 1,213 apples (3,639 seeds + 1,213 water), done 9:02 PM. Collected Supplier achievement +,000. Cash ,635. Level 2 unlocks 5hr production runs.
 [7:20 PM] Scaled up: bought 250 oranges on the exchange @ .25 (avg retail .09), stocked the store - selling out by 8:24 PM, ~/h profit. Farm's 2hr apple run (1,213 apples) still cooking till 9:02 PM.
 [7:22 PM] Added official-API price puller (tools/market.mjs) + knowledge doc + repo AGENTS.md with the scaling mission. Margins live: grapes .17, oranges .84, apples .27 per unit retail-flip.
+[7:35 PM] Big day: collected ,150 in reward banners (tutorial ,000, Supplier ,100, Retailer , Builder ,500, Buyer ,500, Employer ,000). Built Farm #2 + Grocery store #2 (4 buildings). Cash ,021. Playbook.md = standing procedure w/ roadmap to Construction factory ().
