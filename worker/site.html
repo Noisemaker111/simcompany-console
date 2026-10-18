@@ -181,7 +181,7 @@
   .chip svg { width: 10px; height: 10px; }
   .prog { height: 6px; border-radius: 3px; background: var(--accent-wash); margin-top: 10px; overflow: hidden; }
   .prog i { display: block; height: 100%; border-radius: 3px; background: var(--accent); transition: width 1s linear; }
-  .progmeta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-top: 5px; }
+  .progmeta { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-top: 5px; }
 
   /* ---------- warehouse ---------- */
   .wh { width: 100%; border-collapse: collapse; }
@@ -728,9 +728,9 @@
       const p = span > 0 ? Math.min(1, b.p0 + (1 - b.p0) * el / span) : 1;
       const bar = document.getElementById('bp' + b.i); if (!bar) continue;
       bar.style.width = (p * 100).toFixed(1) + '%';
-      document.getElementById('bpp' + b.i).textContent = (p >= 1 ? 'finished' : Math.round(p * 100) + '% est.');
+      document.getElementById('bpp' + b.i).textContent = (p >= 1 ? '100%' : Math.round(p * 100) + '% est.');
       const left = (b.eta - now) / 1000;
-      document.getElementById('bpe' + b.i).textContent = left > 0 ? dur(left) + ' left' : 'ready since ' + b.eta.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      document.getElementById('bpe' + b.i).textContent = left > 0 ? dur(left) + ' left' : 'ready ' + b.eta.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     }
   }
 
