@@ -10,3 +10,7 @@
 [5:39 PM] Final map build: grass blocks + sidewalk rings, roads, market, plaza HQ with money statue, sale parcels - all from the game's own sprite CDN.
 [5:45 PM] Signup bonus landed (10k water/power, 5k transport). Sold 5k power + 3k transport on the exchange: cash  -> ,257. Level 1 (30%). Started 2,660-seed run (done 6:54 PM), then 606 apples.
 [5:58 PM] Console rebuilt as a full control-room dashboard: buildings, warehouse, slots, cash + warehouse graphs, live action queue, steering. Game-look dropped per Jon.
+[6:25 PM] Dashboard upgraded: time-axis charts (cash + multi-series warehouse), exchange prices, store status. Repo: github.com/Noisemaker111/simcompany-console
+[7:05 PM] Level 2 (25%). Started 2hr apples run: 1,213 apples (3,639 seeds + 1,213 water), done 9:02 PM. Collected Supplier achievement +,000. Cash ,635. Level 2 unlocks 5hr production runs.
+[7:20 PM] Scaled up: bought 250 oranges on the exchange @ .25 (avg retail .09), stocked the store - selling out by 8:24 PM, ~/h profit. Farm's 2hr apple run (1,213 apples) still cooking till 9:02 PM.
+[7:22 PM] Added official-API price puller (tools/market.mjs) + knowledge doc + repo AGENTS.md with the scaling mission. Margins live: grapes .17, oranges .84, apples .27 per unit retail-flip.

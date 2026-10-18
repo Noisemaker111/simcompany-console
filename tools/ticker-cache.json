@@ -1,0 +1,857 @@
+{
+ "at": 1792365494024,
+ "prices": [
+  {
+   "kind": 145,
+   "name": "Software",
+   "price": 120,
+   "is_up": false
+  },
+  {
+   "kind": 13,
+   "name": "Transport",
+   "price": 0.36,
+   "is_up": false
+  },
+  {
+   "kind": 33,
+   "name": "Breeding research",
+   "price": 97,
+   "is_up": false
+  },
+  {
+   "kind": 15,
+   "name": "bauxite.png",
+   "price": 9.8,
+   "is_up": true
+  },
+  {
+   "kind": 109,
+   "name": "windows.png",
+   "price": 103,
+   "is_up": false
+  },
+  {
+   "kind": 108,
+   "name": "planks.png",
+   "price": 9,
+   "is_up": false
+  },
+  {
+   "kind": 66,
+   "name": "Seeds",
+   "price": 0.277,
+   "is_up": false
+  },
+  {
+   "kind": 19,
+   "name": "plastic.png",
+   "price": 10.6,
+   "is_up": true
+  },
+  {
+   "kind": 1,
+   "name": "Power",
+   "price": 0.244,
+   "is_up": false
+  },
+  {
+   "kind": 72,
+   "name": "Coffee beans",
+   "price": 1.57,
+   "is_up": true
+  },
+  {
+   "kind": 101,
+   "name": "reinforced-concrete.png",
+   "price": 175,
+   "is_up": false
+  },
+  {
+   "kind": 111,
+   "name": "Construction units",
+   "price": 2440,
+   "is_up": true
+  },
+  {
+   "kind": 16,
+   "name": "Silicon",
+   "price": 7.4,
+   "is_up": true
+  },
+  {
+   "kind": 58,
+   "name": "automotive-research.png",
+   "price": 114,
+   "is_up": true
+  },
+  {
+   "kind": 3,
+   "name": "Apples",
+   "price": 2,
+   "is_up": false
+  },
+  {
+   "kind": 29,
+   "name": "plant-research.png",
+   "price": 93,
+   "is_up": false
+  },
+  {
+   "kind": 106,
+   "name": "wood.png",
+   "price": 4.1,
+   "is_up": false
+  },
+  {
+   "kind": 73,
+   "name": "ethanol.png",
+   "price": 26.75,
+   "is_up": false
+  },
+  {
+   "kind": 2,
+   "name": "Water",
+   "price": 0.357,
+   "is_up": true
+  },
+  {
+   "kind": 24,
+   "name": "Smart phones",
+   "price": 560,
+   "is_up": false
+  },
+  {
+   "kind": 112,
+   "name": "Bulldozer",
+   "price": 2060,
+   "is_up": false
+  },
+  {
+   "kind": 146,
+   "name": "Recipes",
+   "price": 4.35,
+   "is_up": true
+  },
+  {
+   "kind": 46,
+   "name": "leather.png",
+   "price": 26,
+   "is_up": false
+  },
+  {
+   "kind": 14,
+   "name": "Minerals",
+   "price": 10.7,
+   "is_up": true
+  },
+  {
+   "kind": 7,
+   "name": "Construction units",
+   "price": 38.5,
+   "is_up": false
+  },
+  {
+   "kind": 17,
+   "name": "chemicals.png",
+   "price": 14.3,
+   "is_up": true
+  },
+  {
+   "kind": 5,
+   "name": "Grapes",
+   "price": 2.95,
+   "is_up": false
+  },
+  {
+   "kind": 115,
+   "name": "Iron ore",
+   "price": 129,
+   "is_up": true
+  },
+  {
+   "kind": 44,
+   "name": "sand.png",
+   "price": 1.19,
+   "is_up": true
+  },
+  {
+   "kind": 18,
+   "name": "Chemicals",
+   "price": 18.5,
+   "is_up": true
+  },
+  {
+   "kind": 118,
+   "name": "Coffee beans",
+   "price": 0.75,
+   "is_up": false
+  },
+  {
+   "kind": 12,
+   "name": "Diesel",
+   "price": 38.75,
+   "is_up": true
+  },
+  {
+   "kind": 135,
+   "name": "sugar.png",
+   "price": 17,
+   "is_up": false
+  },
+  {
+   "kind": 8,
+   "name": "sausages.png",
+   "price": 10.5,
+   "is_up": false
+  },
+  {
+   "kind": 133,
+   "name": "Flour",
+   "price": 16.5,
+   "is_up": false
+  },
+  {
+   "kind": 83,
+   "name": "rocket-fuel.png",
+   "price": 27.75,
+   "is_up": false
+  },
+  {
+   "kind": 22,
+   "name": "batteries.png",
+   "price": 81,
+   "is_up": false
+  },
+  {
+   "kind": 41,
+   "name": "fabric.png",
+   "price": 4.6,
+   "is_up": false
+  },
+  {
+   "kind": 110,
+   "name": "tools.png",
+   "price": 196,
+   "is_up": false
+  },
+  {
+   "kind": 9,
+   "name": "Eggs",
+   "price": 1.21,
+   "is_up": true
+  },
+  {
+   "kind": 148,
+   "name": "witch-costume.png",
+   "price": 31.75,
+   "is_up": true
+  },
+  {
+   "kind": 43,
+   "name": "Steel",
+   "price": 11.1,
+   "is_up": false
+  },
+  {
+   "kind": 32,
+   "name": "electronics-research.png",
+   "price": 175,
+   "is_up": false
+  },
+  {
+   "kind": 113,
+   "name": "materials-research.png",
+   "price": 105,
+   "is_up": true
+  },
+  {
+   "kind": 86,
+   "name": "rocket-engine.png",
+   "price": 10000,
+   "is_up": false
+  },
+  {
+   "kind": 114,
+   "name": "Steel",
+   "price": 615,
+   "is_up": true
+  },
+  {
+   "kind": 69,
+   "name": "golden-bars.png",
+   "price": 5700,
+   "is_up": true
+  },
+  {
+   "kind": 75,
+   "name": "Cocoa",
+   "price": 6.1,
+   "is_up": true
+  },
+  {
+   "kind": 122,
+   "name": "cheese.png",
+   "price": 122,
+   "is_up": true
+  },
+  {
+   "kind": 59,
+   "name": "fashion-research.png",
+   "price": 59,
+   "is_up": false
+  },
+  {
+   "kind": 137,
+   "name": "dough.png",
+   "price": 110,
+   "is_up": true
+  },
+  {
+   "kind": 34,
+   "name": "chemistry-research.png",
+   "price": 82.5,
+   "is_up": false
+  },
+  {
+   "kind": 10,
+   "name": "Beef",
+   "price": 26.75,
+   "is_up": true
+  },
+  {
+   "kind": 25,
+   "name": "Tablets",
+   "price": 740,
+   "is_up": true
+  },
+  {
+   "kind": 103,
+   "name": "cement.png",
+   "price": 6,
+   "is_up": false
+  },
+  {
+   "kind": 21,
+   "name": "electronic-components.png",
+   "price": 51,
+   "is_up": false
+  },
+  {
+   "kind": 102,
+   "name": "Bricks",
+   "price": 2.45,
+   "is_up": true
+  },
+  {
+   "kind": 31,
+   "name": "mining-research.png",
+   "price": 169,
+   "is_up": true
+  },
+  {
+   "kind": 52,
+   "name": "combustion-engine.png",
+   "price": 555,
+   "is_up": false
+  },
+  {
+   "kind": 65,
+   "name": "sneakers.png",
+   "price": 13.3,
+   "is_up": true
+  },
+  {
+   "kind": 150,
+   "name": "tree.png",
+   "price": 354,
+   "is_up": true
+  },
+  {
+   "kind": 76,
+   "name": "carbon-composite.png",
+   "price": 54.5,
+   "is_up": false
+  },
+  {
+   "kind": 120,
+   "name": "Fodder",
+   "price": 2.6,
+   "is_up": false
+  },
+  {
+   "kind": 11,
+   "name": "petrol.png",
+   "price": 39,
+   "is_up": false
+  },
+  {
+   "kind": 20,
+   "name": "Processors",
+   "price": 109,
+   "is_up": true
+  },
+  {
+   "kind": 64,
+   "name": "handbags.png",
+   "price": 42.75,
+   "is_up": false
+  },
+  {
+   "kind": 107,
+   "name": "Steel beams",
+   "price": 19.2,
+   "is_up": true
+  },
+  {
+   "kind": 60,
+   "name": "underwear.png",
+   "price": 6.1,
+   "is_up": false
+  },
+  {
+   "kind": 47,
+   "name": "on-board-computer.png",
+   "price": 430,
+   "is_up": true
+  },
+  {
+   "kind": 61,
+   "name": "gloves.png",
+   "price": 18.9,
+   "is_up": false
+  },
+  {
+   "kind": 123,
+   "name": "apple-pie.png",
+   "price": 272,
+   "is_up": false
+  },
+  {
+   "kind": 79,
+   "name": "high-grade-e-components.png",
+   "price": 785,
+   "is_up": false
+  },
+  {
+   "kind": 6,
+   "name": "Grain",
+   "price": 0.655,
+   "is_up": false
+  },
+  {
+   "kind": 124,
+   "name": "orange-juice.png",
+   "price": 33.25,
+   "is_up": false
+  },
+  {
+   "kind": 4,
+   "name": "Oranges",
+   "price": 2.25,
+   "is_up": false
+  },
+  {
+   "kind": 42,
+   "name": "iron-ore.png",
+   "price": 5.1,
+   "is_up": false
+  },
+  {
+   "kind": 26,
+   "name": "laptops.png",
+   "price": 1150,
+   "is_up": true
+  },
+  {
+   "kind": 45,
+   "name": "glass.png",
+   "price": 11.8,
+   "is_up": false
+  },
+  {
+   "kind": 30,
+   "name": "energy-research.png",
+   "price": 156,
+   "is_up": true
+  },
+  {
+   "kind": 54,
+   "name": "luxury-e-car.png",
+   "price": 6200,
+   "is_up": true
+  },
+  {
+   "kind": 70,
+   "name": "gold-watch.png",
+   "price": 750,
+   "is_up": false
+  },
+  {
+   "kind": 74,
+   "name": "methane.png",
+   "price": 16.8,
+   "is_up": false
+  },
+  {
+   "kind": 40,
+   "name": "Cotton",
+   "price": 1.51,
+   "is_up": false
+  },
+  {
+   "kind": 125,
+   "name": "apple-cider.png",
+   "price": 27.25,
+   "is_up": true
+  },
+  {
+   "kind": 35,
+   "name": "software.png",
+   "price": 68.5,
+   "is_up": false
+  },
+  {
+   "kind": 127,
+   "name": "pizza.png",
+   "price": 428,
+   "is_up": false
+  },
+  {
+   "kind": 77,
+   "name": "fuselage.png",
+   "price": 2500,
+   "is_up": true
+  },
+  {
+   "kind": 126,
+   "name": "ginger-beer.png",
+   "price": 50,
+   "is_up": true
+  },
+  {
+   "kind": 139,
+   "name": "Software",
+   "price": 10.1,
+   "is_up": false
+  },
+  {
+   "kind": 105,
+   "name": "limestone.png",
+   "price": 1.57,
+   "is_up": true
+  },
+  {
+   "kind": 119,
+   "name": "coffee-ground.png",
+   "price": 33.5,
+   "is_up": true
+  },
+  {
+   "kind": 56,
+   "name": "luxury-car.png",
+   "price": 4240,
+   "is_up": false
+  },
+  {
+   "kind": 143,
+   "name": "samosas.png",
+   "price": 620,
+   "is_up": false
+  },
+  {
+   "kind": 117,
+   "name": "milk.png",
+   "price": 7,
+   "is_up": true
+  },
+  {
+   "kind": 51,
+   "name": "car-body.png",
+   "price": 710,
+   "is_up": false
+  },
+  {
+   "kind": 104,
+   "name": "clay.png",
+   "price": 0.97,
+   "is_up": true
+  },
+  {
+   "kind": 55,
+   "name": "economy-car.png",
+   "price": 2210,
+   "is_up": true
+  },
+  {
+   "kind": 68,
+   "name": "gold-ore.png",
+   "price": 29,
+   "is_up": false
+  },
+  {
+   "kind": 134,
+   "name": "butter.png",
+   "price": 43.75,
+   "is_up": true
+  },
+  {
+   "kind": 142,
+   "name": "salad.png",
+   "price": 735,
+   "is_up": true
+  },
+  {
+   "kind": 132,
+   "name": "cocktails.png",
+   "price": 1880,
+   "is_up": true
+  },
+  {
+   "kind": 71,
+   "name": "necklace.png",
+   "price": 1480,
+   "is_up": false
+  },
+  {
+   "kind": 121,
+   "name": "bread.png",
+   "price": 140,
+   "is_up": false
+  },
+  {
+   "kind": 141,
+   "name": "vegetable-oil.png",
+   "price": 29.25,
+   "is_up": false
+  },
+  {
+   "kind": 50,
+   "name": "car-interior.png",
+   "price": 308,
+   "is_up": true
+  },
+  {
+   "kind": 23,
+   "name": "displays.png",
+   "price": 109,
+   "is_up": false
+  },
+  {
+   "kind": 152,
+   "name": "ramadan-sweets.png",
+   "price": 276,
+   "is_up": true
+  },
+  {
+   "kind": 98,
+   "name": "quadcopter.png",
+   "price": 785,
+   "is_up": true
+  },
+  {
+   "kind": 63,
+   "name": "simmi-shoes.png",
+   "price": 34.5,
+   "is_up": false
+  },
+  {
+   "kind": 28,
+   "name": "televisions.png",
+   "price": 895,
+   "is_up": false
+  },
+  {
+   "kind": 48,
+   "name": "electric-motor.png",
+   "price": 200,
+   "is_up": true
+  },
+  {
+   "kind": 81,
+   "name": "cockpit.png",
+   "price": 4960,
+   "is_up": false
+  },
+  {
+   "kind": 80,
+   "name": "flight-computer.png",
+   "price": 4370,
+   "is_up": false
+  },
+  {
+   "kind": 147,
+   "name": "jack-o-lantern.png",
+   "price": 32.75,
+   "is_up": true
+  },
+  {
+   "kind": 116,
+   "name": "Aluminium",
+   "price": 40.25,
+   "is_up": false
+  },
+  {
+   "kind": 129,
+   "name": "hamburger.png",
+   "price": 1940,
+   "is_up": false
+  },
+  {
+   "kind": 130,
+   "name": "lasagna.png",
+   "price": 1810,
+   "is_up": true
+  },
+  {
+   "kind": 128,
+   "name": "pasta.png",
+   "price": 49.75,
+   "is_up": false
+  },
+  {
+   "kind": 153,
+   "name": "icecream-chocolate.png",
+   "price": 100,
+   "is_up": false
+  },
+  {
+   "kind": 136,
+   "name": "cocoa-beans.png",
+   "price": 1.49,
+   "is_up": false
+  },
+  {
+   "kind": 89,
+   "name": "jet-engine.png",
+   "price": 4240,
+   "is_up": true
+  },
+  {
+   "kind": 82,
+   "name": "attitude-control.png",
+   "price": 1450,
+   "is_up": true
+  },
+  {
+   "kind": 138,
+   "name": "gravy-boat.png",
+   "price": 1030,
+   "is_up": false
+  },
+  {
+   "kind": 85,
+   "name": "solid-rocket.png",
+   "price": 6850,
+   "is_up": true
+  },
+  {
+   "kind": 84,
+   "name": "fuel-tank.png",
+   "price": 8200,
+   "is_up": true
+  },
+  {
+   "kind": 140,
+   "name": "chocolate.png",
+   "price": 246,
+   "is_up": true
+  },
+  {
+   "kind": 53,
+   "name": "economy-e-car.png",
+   "price": 3290,
+   "is_up": false
+  },
+  {
+   "kind": 62,
+   "name": "dress.png",
+   "price": 21.75,
+   "is_up": true
+  },
+  {
+   "kind": 49,
+   "name": "luxury-car-interior.png",
+   "price": 885,
+   "is_up": false
+  },
+  {
+   "kind": 67,
+   "name": "xmas-crackers.png",
+   "price": 11.3,
+   "is_up": true
+  },
+  {
+   "kind": 131,
+   "name": "meatballs.png",
+   "price": 1990,
+   "is_up": false
+  },
+  {
+   "kind": 149,
+   "name": "pumpkin-soup.png",
+   "price": 650,
+   "is_up": false
+  },
+  {
+   "kind": 57,
+   "name": "truck.png",
+   "price": 5475,
+   "is_up": true
+  },
+  {
+   "kind": 78,
+   "name": "wing.png",
+   "price": 1770,
+   "is_up": false
+  },
+  {
+   "kind": 27,
+   "name": "monitors.png",
+   "price": 515,
+   "is_up": false
+  },
+  {
+   "kind": 144,
+   "name": "xmas-ornament.png",
+   "price": 15.2,
+   "is_up": true
+  },
+  {
+   "kind": 88,
+   "name": "ion-drive.png",
+   "price": 10700,
+   "is_up": true
+  },
+  {
+   "kind": 100,
+   "name": "aero-research.png",
+   "price": 105,
+   "is_up": true
+  },
+  {
+   "kind": 155,
+   "name": "cream-egg.png",
+   "price": 108,
+   "is_up": false
+  },
+  {
+   "kind": 151,
+   "name": "easter-bunny.png",
+   "price": 230,
+   "is_up": false
+  },
+  {
+   "kind": 87,
+   "name": "heat-shield.png",
+   "price": 430,
+   "is_up": false
+  },
+  {
+   "kind": 154,
+   "name": "icecream-apple.png",
+   "price": "sold out",
+   "is_up": true
+  }
+ ]
+}
