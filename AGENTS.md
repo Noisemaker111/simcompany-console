@@ -30,8 +30,10 @@ Jon's forever goal is to build **construction-units production** (avg $2,440/uni
 ## Rules
 
 - Every game action goes through the real browser UI (Owl steps). No game POSTs through the API — the game's own guide says automation that performs actions risks a captcha and account deletion. Jon has accepted the automation risk for browser play; still act human-paced, no rapid-fire loops.
+- **Human pacing: pause 3–6 s between browser actions** (a Start-Sleep between steps reads fine in logs and keeps the traffic human-shaped). Never chain many clicks in one instant; one meaningful action per beat.
+- **No idle gaps by design**: the restock decision point is when a store's shelf timer has < 45 min left — warehouse stock must already cover the next shelf cycle. The worker's `derive()` flags this as a GAP ALERT; never let one fire and stay unfired.
 - Never poll in a sleep loop; bounded waits between game timers, act, then update the dashboard and stop.
-- Push dashboard state after every meaningful action: `POST {worker-url}/api/agent/state` with header `x-agent-token` (token in `worker/agent-token.txt`, never commit it). Body: `{ state, log }`. Keep `state.history` appending with real timestamps ('HH:MM') — graphs need the time axis.
+- Push dashboard state after every meaningful action: prefer one `POST {worker-url}/api/agent/event(s)` per action (canonical reducer) or `POST /api/agent/seed` for a full overwrite. Header `x-agent-token` (token in `worker/agent-token.txt`, never commit). Buildings carry `timer: {startsAt, endsAt, label}` so the site derives countdowns, "done — needs next step" and gap alerts.
 - Claim steering commands each cycle: `POST /api/agent/claim` (returns queued commands, logs them as 'sent'). Obey Jon's commands over default strategy.
 - Knowledge lives in `C:/Users/Jk101/.agents/knowledge/simcompany.md` — update it when you verify new mechanics (prices, recipes, unlocks, endpoints).
 

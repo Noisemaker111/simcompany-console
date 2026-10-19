@@ -9,11 +9,11 @@ session and between timers. Update this file whenever the game teaches something
 2. **Prices** — `node tools/market.mjs` (GET API, 1 req/min max). Record grape/orange/apple buy prices + margins.
 3. **Collect everything on the map** (`/landscape/`): click every right-side banner (achievement/level-up dialogs have a COLLECT button) and the golden $ statue at the HQ (login pickup).
 4. **Check achievements** — `/achievements/`: anything "done" but uncollected = free cash. Track next-tier targets (they drive what we do).
-5. **Store shelves** — `/b/{store}/`: restock with ALL + AVG PRICE. Empty shelf = rebuy fruit per margins (best margin first).
+5. **Store shelves** — `/b/{store}/`: restock with ALL + AVG PRICE. **Restock decision point: when a shelf timer has < 45 min left, the warehouse must already hold the next cycle's stock — if not, buy it now (the dashboard's GAP ALERT fires when this is missed).**
 6. **Farm runs** — `/b/{farm}/production/{resource}/`: longest run the level allows. Surplus fruit beyond shelf space goes to the exchange at best bid (`/headquarters/warehouse/{res}/sell/` → ALL → UNDERCUT).
-7. **Daily "Produce or sell today"** — after its cooldown (8:30 PM), collect +5 credits.
+7. **Daily "Produce or sell today"** — after its cooldown, collect +5 credits.
 8. **Build/upgrade decision** — cash-gate ladder below.
-9. **Push dashboard** — `{ state, log }` with fresh `ts` and a history point (t:'HH:MM', cash, water, power, transport, seeds, apples). Graphs need the time axis.
+9. **Push dashboard** — one event per action (`/api/agent/event`) or `/api/agent/seed` for full overwrite, with buildings carrying `timer: {startsAt, endsAt, label}` (countdowns, "done — needs next step", and gap alerts are derived server-side from these).
 
 ## Decision rules
 
