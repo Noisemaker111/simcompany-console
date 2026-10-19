@@ -9,6 +9,13 @@ Two jobs, one project:
 
 **[PLAYBOOK.md](PLAYBOOK.md) is the standing procedure** — session checklist, decision rules, build catalog, and the roadmap/timeline to construction-units production. Follow it top to bottom. Knowledge doc: `C:/Users/Jk101/.agents/knowledge/simcompany.md`.
 
+## Memory discipline (how this project learns)
+
+1. The moment you need something you don't know, **append it to [OPEN-QUESTIONS.md](OPEN-QUESTIONS.md)** (question, why needed, how to verify). Never hold an unknown in your head — the next session won't have it.
+2. Every play session, **verify 1–2 open questions** with the smallest experiment, then move the verified answer into PLAYBOOK.md / the knowledge doc and archive the row with its evidence.
+3. Every observation gets logged (log.txt + dashboard push) with numbers and units.
+4. Game-timer waits are bounded (no sleep-loops) and end with a dashboard update.
+
 ## The mission: scale
 
 Jon's forever goal is to build **construction-units production** (avg $2,440/unit; the factory is ~$72k). That needs levels, cash and building slots. Between actions, always be maximizing:
